@@ -1,5 +1,5 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import MyFunctionalComponent from "./FirstComponet.tsx";
+import Main from "./App.tsx";
 
-ReactDOM.render(<MyFunctionalComponent />, document.getElementById("root"));
+ReactDOM.render(<Main />, document.getElementById("root"));
