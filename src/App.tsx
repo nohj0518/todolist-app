@@ -9,12 +9,12 @@ function Main(_props) {
       <link rel="stylesheet" href="https://unpkg.com/mvp.css"></link>
       <body>
         <header>
-          <div>welcome message : {message}</div>
+          <div> 메인 헤더 welcome message : {message}</div>
         </header>
         <main>
           <ToDoList></ToDoList>
         </main>
-        <footer>footer</footer>
+        <footer>footer : 푸터를 만든다면...</footer>
       </body>
     </>
   );
