@@ -1,21 +1,29 @@
 import React, { useState } from "react";
 
-function ToDoItem(_props) {
+function ToDoItem(props) {
   const [message, setMessage] = useState("Hello, World!");
 
-  return (
-    <>
-      <div>
-        <h2> 할일 제목 : 운동가기 </h2>
-        <p>
-          {" "}
-          할일 메모 : 오늘의 운동 루틴 유산소 30분, 팔굽혀펴기 50개, 스쿼트
-          100개{" "}
-        </p>
-        <button> Delete </button>
-      </div>
-    </>
-  );
+  const content =
+    props.todos.length > 0 ? (
+      props.todos.map((todo) => (
+        <aside key={todo.id}>
+          <h3> 할일 제목 : {todo.title}</h3>
+          <p> 할일 메모 : {todo.memo}</p>
+          <a onClick={() => props.onDelete(todo.id)}>
+            <b>Delete</b>
+          </a>{" "}
+          <a onClick={() => props.onDelete(todo.id)}>
+            <i>Update</i>
+          </a>
+        </aside>
+      ))
+    ) : (
+      <aside>
+        <div>Empty Todo</div>
+      </aside>
+    );
+
+  return <section>{content}</section>;
 }
 
 export default ToDoItem;
