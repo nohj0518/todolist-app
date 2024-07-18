@@ -6,8 +6,18 @@ function ToDoList(_props) {
   const [memo, setMemo] = useState("");
 
   const [todos, setTodos] = useState([
-    { id: 1, title: "Sample Todo 1", memo: "This is a sample memo 1" },
-    { id: 2, title: "Sample Todo 2", memo: "This is a sample memo 2" },
+    {
+      id: 1,
+      title: "Sample Todo 1",
+      memo: "This is a sample memo 1",
+      isComplete: false,
+    },
+    {
+      id: 2,
+      title: "Sample Todo 2",
+      memo: "This is a sample memo 2",
+      isComplete: false,
+    },
   ]);
 
   const today = new Date();
@@ -21,7 +31,7 @@ function ToDoList(_props) {
 
   const createTodo = (title, memo) => {
     const newId = todos.length ? todos[todos.length - 1].id + 1 : 1;
-    setTodos([...todos, { id: newId, title, memo }]);
+    setTodos([...todos, { id: newId, title, memo, isComplete: false }]);
   };
 
   const handleSubmit = (e) => {
@@ -31,9 +41,13 @@ function ToDoList(_props) {
     setMemo("");
   };
 
-  const updateTodo = (id) => {};
-
-  const showTodoForm = () => {};
+  const updateTodo = (id) => {
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, isComplete: !todo.isComplete } : todo
+      )
+    );
+  };
 
   return (
     <>
@@ -65,7 +79,7 @@ function ToDoList(_props) {
           ></input>
           <button type="submit">Create</button>
         </form>
-        <ToDoItem todos={todos} onDelete={deleteTodo} />
+        <ToDoItem todos={todos} onDelete={deleteTodo} onUpdate={updateTodo} />
       </div>
     </>
   );
