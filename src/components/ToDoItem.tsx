@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 
 function ToDoItem({ todos, onDelete, onUpdate }) {
-  const [message, setMessage] = useState("Hello, World!");
-
   const content =
     todos.length > 0 ? (
       todos.map((todo) => (
