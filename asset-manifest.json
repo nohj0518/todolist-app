@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "//nohj0518.github.io/todolist-app/static/js/main.8e4095f0.js",
-    "index.html": "//nohj0518.github.io/todolist-app/index.html",
-    "main.8e4095f0.js.map": "//nohj0518.github.io/todolist-app/static/js/main.8e4095f0.js.map"
+    "main.js": "/todolist-app/static/js/main.8e4095f0.js",
+    "index.html": "/todolist-app/index.html",
+    "main.8e4095f0.js.map": "/todolist-app/static/js/main.8e4095f0.js.map"
   },
   "entrypoints": [
     "static/js/main.8e4095f0.js"
