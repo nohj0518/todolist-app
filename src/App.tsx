@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ToDoList from "./components/ToDoList.tsx";
+import UserInfo from "./components/UserInfo.tsx";
 import "./global.css";
 
 function Main(_props) {
@@ -14,8 +15,8 @@ function Main(_props) {
 
       <body>
         <header>
-          <h1 className="text-3xl font-bold underline red">Hello world!</h1>
-          <div> 메인 헤더 welcome message : {message}</div>
+          <h1 className="text-3xl font-bold underline red">{message}</h1>
+          <UserInfo />
         </header>
         <main>
           <ToDoList></ToDoList>
